@@ -49,7 +49,7 @@ pipeline {
             steps {
                 // sudo apt update 
                 // sudo apt install iputils-ping -y
-                sh "export ANSIBLE_HOST_KEY_CHECKING=False"
+                //sh "export ANSIBLE_HOST_KEY_CHECKING=False"
                 sh "chmod 400 aws_key_pair.cer"
                 sh "ansible -i inventory -m ping all --ssh-common-args='-o StrictHostKeyChecking=no'"
             }
@@ -57,6 +57,7 @@ pipeline {
 
      stage("ANSIBLE deploy container") {
             steps {
+                    sh "docker stop  \$(docker ps -a -q)"
                    sh "docker rm -f \$(docker ps -a -q)" // comment it for 1st run
                    //remove all containers , use triple quote to use $ sign
                    // or use  "docker rm -f \$(docker ps -a -q)"
