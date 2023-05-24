@@ -34,9 +34,12 @@ pipeline {
         // this project is parameterizer and add Password Parameter username and password
                stage('Login to DOCKER') {
             steps {
+                // login to docker
                 sh "docker login -u $username -p $password"
+                // push 
                 sh "docker push rahulshri0703/new999:$BUILD_NUMBER"
                 sh "docker push rahulshri0703/new999:latest"
+                //delete the images
                 sh " docker rmi rahulshri0703/new999:$BUILD_NUMBER"
                 sh " docker rmi rahulshri0703/new999:latest"
             }
