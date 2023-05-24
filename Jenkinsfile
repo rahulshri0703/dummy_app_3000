@@ -23,10 +23,23 @@ pipeline {
 
           stage('BUILDING DOCKER IMAGE') {
             steps {
-                sh "docker build -t new99 ."
+                sh "docker build -t rahulshri0703/new99:$BUILD_NUMBER ."
             }
         }
 
+         stage('Login to DOCKER') {
+            steps {
+                sh "docker login -u rahulshri0703 -p d8982667712!"
+            }
+        }
+
+        {
+            stage ('PUSH TO DOCKER') {
+                steps {
+                    sh "docker push rahulshri0703/new99:$BUILD_NUMBER"
+                }
+            }
+        }
     }
     }
     
