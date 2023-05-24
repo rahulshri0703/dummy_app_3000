@@ -57,7 +57,7 @@ pipeline {
 
      stage("ANSIBLE deploy container") {
             steps {
-                  // sh '''docker rm -f $(docker ps -a -q)'''
+                   sh '''docker rm -f $(docker ps -a -q)''' // comment it for 1st run
                    //remove all containers , use triple quote to use $ sign
                    // or use  "docker rm -f \$(docker ps -a -q)"
                 // deploy
