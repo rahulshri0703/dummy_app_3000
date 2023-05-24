@@ -1,0 +1,21 @@
+---
+- name: deploy container
+  hosts: all
+  become: yes
+  tasks:
+    
+    - name: connect
+      ansible.builtin.shell:
+        cmd: echo "connected"
+    
+    - name: copy docker_install.sh
+      copy:
+        src: deploy_container.sh
+        dest: /etc/deploy_container.sh
+
+    - name: run script
+      ansible.builtin.shell:
+        cmd: sh /etc/deploy_container.sh
+      args:
+        executable: /bin/bash
+        

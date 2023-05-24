@@ -45,6 +45,19 @@ pipeline {
             }
         }
 
+        stage("ANSIBLE PING TO VMS") {
+            steps {
+                sh "ansible -i inventory ping all"
+            }
+        }
+
+     stage("ANSIBLE deploy container") {
+            steps {
+                sh "docker rm app"
+                sh "ansible-playbook -i inventory ansible_command.yml"
+            }
+        }
+         
 
     }
     }
