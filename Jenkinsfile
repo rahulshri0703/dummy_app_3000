@@ -40,7 +40,7 @@ pipeline {
 
                stage('Login to DOCKER') {
             steps {
-                sh "docker login -u $user -p $pass"
+                sh "docker login -u $username -p $password"
                 sh "docker push rahulshri0703/new999"
             }
         }
