@@ -38,12 +38,12 @@ pipeline {
             }
         }
 
-        //        stage('Login to DOCKER') {
-        //     steps {
-        //         sh "docker login -u rahulshri0703 -p d8982667712!"
-        //         sh "docker push rahulshri0703/new999"
-        //     }
-        // }
+               stage('Login to DOCKER') {
+            steps {
+                sh "docker login -u $user -p $pass"
+                sh "docker push rahulshri0703/new999"
+            }
+        }
 
 
     }
