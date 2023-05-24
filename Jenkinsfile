@@ -16,7 +16,7 @@ pipeline {
         }
 
         stage('echo') {
-            step {
+            steps {
                 sh "echo GOOD"
             }
         }
