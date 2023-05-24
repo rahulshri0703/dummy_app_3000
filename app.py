@@ -11,4 +11,4 @@ def index():
 
 @app.get("/health")
 def health():
-    return {"health": "ok"}
+    return jsonify({"health": "ok"})
