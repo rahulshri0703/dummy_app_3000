@@ -25,7 +25,7 @@ pipeline {
           stage('BUILDING DOCKER IMAGE') {
             steps {
                 sh "ls"
-                sh "docker build -t rahulshri0703/new999:$BUILD_NUMBER -t rahulshri0703/new999:latest ."
+                sh "docker build -t rahulshri0703/dummy_3000:$BUILD_NUMBER -t rahulshri0703/dummy_3000:latest ."
                 // sh "docker tag new999:$BUILD_NUMBER rahulshri0703/new999:$BUILD_NUMBER"
             }
         
@@ -37,11 +37,11 @@ pipeline {
                 // login to docker
                 sh "docker login -u $username -p $password"
                 // push 
-                sh "docker push rahulshri0703/new999:$BUILD_NUMBER"
-                sh "docker push rahulshri0703/new999:latest"
+                sh "docker push rahulshri0703/dummy_3000:$BUILD_NUMBER"
+                sh "docker push rahulshri0703/dummy_3000:latest"
                 //delete the images
-                sh " docker rmi rahulshri0703/new999:$BUILD_NUMBER"
-                sh " docker rmi rahulshri0703/new999:latest"
+                sh " docker rmi rahulshri0703/dummy_3000:$BUILD_NUMBER"
+                sh " docker rmi rahulshri0703/dummy_3000:latest"
             }
         }
 
