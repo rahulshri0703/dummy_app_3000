@@ -31,13 +31,7 @@ pipeline {
         
         }
 
-        stage('Creds'){
-            steps {
-                sh "echo $user"
-                sh "echo $pass"
-            }
-        }
-
+        // this project is parameterizer and add Password Parameter username and password
                stage('Login to DOCKER') {
             steps {
                 sh "docker login -u $username -p $password"
