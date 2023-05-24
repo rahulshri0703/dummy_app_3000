@@ -64,14 +64,6 @@ pipeline {
 
      stage("ANSIBLE deploy container") {
             steps {
-                    sh '''#!/bin/bash
-                    docker stop  $(docker ps -a -q)'''
-
-                   sh '''#!/bin/bash
-                   docker rm -f $(docker ps -a -q)''' // comment it for 1st run
-                   //remove all containers , use triple quote to use $ sign
-                   // or use  "docker rm -f \$(docker ps -a -q)"
-
                 // deploy
                 sh "ansible-playbook -i inventory ansible_command.yml"
             }
