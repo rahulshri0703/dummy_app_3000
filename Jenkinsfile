@@ -24,6 +24,7 @@ pipeline {
 
           stage('BUILDING DOCKER IMAGE') {
             steps {
+                sh "ls"
                 sh "docker build -t rahulshri0703/new999 ."
             }
         }
