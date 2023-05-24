@@ -57,7 +57,9 @@ pipeline {
 
      stage("ANSIBLE deploy container") {
             steps {
-                  sh '''docker rm -f $(docker ps -a -q)''' //remove all containers
+                  // sh '''docker rm -f $(docker ps -a -q)'''
+                   //remove all containers , use triple quote to use $ sign
+                   // or use  "docker rm -f \$(docker ps -a -q)"
                 // deploy
                 sh "ansible-playbook -i inventory ansible_command.yml"
             }
