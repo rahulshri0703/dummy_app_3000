@@ -54,6 +54,7 @@ pipeline {
      stage("ANSIBLE deploy container") {
             steps {
                 sh "docker rm app"
+                // deploy
                 sh "ansible-playbook -i inventory ansible_command.yml"
             }
         }
