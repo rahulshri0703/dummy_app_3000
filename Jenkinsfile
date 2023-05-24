@@ -36,6 +36,7 @@ pipeline {
             steps {
                 sh "docker login -u $username -p $password"
                 sh "docker push rahulshri0703/new999:$BUILD_NUMBER"
+                sh "docker push rahulshri0703/new999:latest"
                 sh " docker rmi rahulshri0703/new999:$BUILD_NUMBER"
                 sh " docker rmi rahulshri0703/new999:latest"
             }
