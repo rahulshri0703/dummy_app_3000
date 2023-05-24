@@ -19,6 +19,7 @@ pipeline {
             steps {
                 sh "echo GOOD"
                 sh "pwd"
+                sh " echo $BUILD_NUMBER"
             }
         }
 
