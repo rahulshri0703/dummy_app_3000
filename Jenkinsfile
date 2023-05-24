@@ -18,6 +18,7 @@ pipeline {
         stage('echo') {
             steps {
                 sh "echo GOOD"
+                sh "pwd"
             }
         }
 
