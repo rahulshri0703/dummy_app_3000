@@ -25,17 +25,10 @@ pipeline {
           stage('BUILDING DOCKER IMAGE') {
             steps {
                 sh "ls"
-                sh "docker build -t rahulshri0703/new999 ."
+                sh "docker build -t new999 ."
             }
         }
 
-        {
-            stage ('PUSH TO DOCKER') {
-                steps {
-                    sh "docker push rahulshri0703/new999"
-                }
-            }
-        }
     }
     }
     
