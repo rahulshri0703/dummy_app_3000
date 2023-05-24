@@ -49,6 +49,7 @@ pipeline {
             steps {
                 // sudo apt update 
                 // sudo apt install iputils-ping -y
+                sh "chmod 400 aws_key_pair.cer"
                 sh "ansible -i inventory -m ping all"
             }
         }
