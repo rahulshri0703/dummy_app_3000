@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 
 
 app = Flask(__name__)
@@ -7,3 +7,8 @@ app = Flask(__name__)
 @app.get("/")
 def index():
     return "This is INDEX FIRST PAGE OF AWS"
+
+
+@app.get("/health")
+def health():
+    return {"health": "ok"}
