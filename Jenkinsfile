@@ -23,14 +23,14 @@ pipeline {
 
           stage('BUILDING DOCKER IMAGE') {
             steps {
-                sh "docker build -t rahulshri0703/new99:$BUILD_NUMBER ."
+                sh "docker build -t rahulshri0703/new99:55 ."
             }
         }
 
         {
             stage ('PUSH TO DOCKER') {
                 steps {
-                    sh "docker push rahulshri0703/new99:$BUILD_NUMBER"
+                    sh "docker push rahulshri0703/new99:55"
                 }
             }
         }
