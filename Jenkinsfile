@@ -26,8 +26,17 @@ pipeline {
             steps {
                 sh "ls"
                 sh "docker build -t new999 ."
+                sh "docker tag new999 rahulshri0703/new999"
+            }
+        
+        }
+
+               stage('Login to DOCKER') {
+            steps {
+                sh "docker push rahulshri0703/new999"
             }
         }
+
 
     }
     }
