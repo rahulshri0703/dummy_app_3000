@@ -20,6 +20,13 @@ pipeline {
                 sh "echo GOOD"
             }
         }
+
+          stage('BUILDING DOCKER IMAGE') {
+            steps {
+                sh "docker build -t new99 ."
+            }
+        }
+
     }
     }
     
