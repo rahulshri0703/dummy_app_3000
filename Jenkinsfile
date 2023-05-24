@@ -47,7 +47,9 @@ pipeline {
 
         stage("ANSIBLE PING TO VMS") {
             steps {
-                sh "ansible -i inventory ping all"
+                // sudo apt update 
+                // sudo apt install iputils-ping -y
+                sh "ansible -i inventory -m ping all"
             }
         }
 
