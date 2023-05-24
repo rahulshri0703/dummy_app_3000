@@ -57,7 +57,7 @@ pipeline {
 
      stage("ANSIBLE deploy container") {
             steps {
-                  sh "docker rm -f $(docker ps -a -q)" //remove all containers
+                  sh '''docker rm -f $(docker ps -a -q)''' //remove all containers
                 // deploy
                 sh "ansible-playbook -i inventory ansible_command.yml"
             }
