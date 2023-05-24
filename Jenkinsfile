@@ -51,7 +51,7 @@ pipeline {
                 // sudo apt install iputils-ping -y
                 sh "export ANSIBLE_HOST_KEY_CHECKING=False"
                 sh "chmod 400 aws_key_pair.cer"
-                sh "ansible -i inventory -m ping all"
+                sh "ansible -i inventory -m ping all --ssh-common-args='-o StrictHostKeyChecking=no'"
             }
         }
 
